@@ -1,12 +1,13 @@
 // All MIT/x11 Licensed Code in this file may be relicensed freely under the GPL
 // or LGPL licenses.
 
-#include "math.h"
+//#include "math.h"
 #include "os_generic.h"
 #include "survive_config.h"
 #include "survive_default_devices.h"
 #include "survive_reproject_gen2.h"
 #include "survive_str.h"
+#include "survive_str.c"
 #include <assert.h>
 #include <json_helpers.h>
 #include <math.h>
@@ -272,8 +273,8 @@ int DriverRegSimulator(SurviveContext *ctx) {
 	sp->velocity.AxisAngleRot[1] = .5;
 	sp->velocity.AxisAngleRot[2] = .5;
 
-	cstring cfg = {};
-	cstring loc = {}, nor_buf = {};
+	cstring cfg = {0,0,0};
+	cstring loc = {0, 0, 0}, nor_buf = {0, 0, 0};
 
 	FLT r = .1;
 	srand(42);

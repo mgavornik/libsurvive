@@ -106,7 +106,8 @@ static double survive_usbmon_playback_run_time(const SurviveContext *ctx, void *
 
 static void write_to_output_raw(SurviveRecordingData *recordingData, const char *string, int len) {
 	if (recordingData->output_file) {
-		gzwrite(recordingData->output_file, string, len);
+		//gzwrite(recordingData->output_file, string, len);
+		fwrite(string,1, len, recordingData->output_file);
 	}
 
 	if (recordingData->alwaysWriteStdOut) {

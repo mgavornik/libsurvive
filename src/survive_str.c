@@ -23,7 +23,8 @@ char *str_increase_by(cstring *str, size_t len) {
 }
 void str_free(cstring *str) {
 	free(str->d);
-	*str = (cstring){};
+	cstring newStr = {0,0,0};
+	*str = newStr;
 }
 void str_append(cstring *str, const char *add) {
 	size_t add_len = strlen(add);
